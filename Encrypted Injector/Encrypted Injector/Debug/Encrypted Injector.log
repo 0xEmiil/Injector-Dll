@@ -1,0 +1,5 @@
+﻿  Encrypted Injector.cpp
+  design_ui.cpp
+  Generando código...
+Encrypted Injector.obj : error LNK2001: símbolo externo "class Encrypted::Design_ui * Encrypted::d" (?d@Encrypted@@3PAVDesign_ui@1@A) sin resolver
+D:\Emiliano Rios\Documents\ProyectosCode\Encrypted Injector\Debug\Encrypted Injector.exe : fatal error LNK1120: 1 externos sin resolver

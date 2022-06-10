@@ -1,0 +1,4 @@
+﻿  Encrypted Injector.cpp
+D:\Emiliano Rios\Documents\ProyectosCode\Encrypted Injector\Encrypted Injector\settings.hpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+D:\Emiliano Rios\Documents\ProyectosCode\Encrypted Injector\Encrypted Injector\nt_create_thread_ex.hpp(258): warning C4715: 'Encrypted::CreateThread::inject': no todas las rutas de acceso de control devuelven un valor
+  Encrypted Injector.vcxproj -> D:\Emiliano Rios\Documents\ProyectosCode\Encrypted Injector\x64\Debug\Encrypted Injector.exe

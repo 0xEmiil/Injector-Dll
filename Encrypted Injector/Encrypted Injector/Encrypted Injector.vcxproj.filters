@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\util">
+      <UniqueIdentifier>{8940f337-8236-49aa-8f67-80672ebf4b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\settings">
+      <UniqueIdentifier>{6c628df8-959c-4dfb-9a55-a48bf1ae263f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\ntcreatethreadex">
+      <UniqueIdentifier>{d84fb467-fbca-4a96-b8be-3f17f578c63d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\privilegios del sistema">
+      <UniqueIdentifier>{f2c388b9-fe84-450f-ac48-a691cf5be96b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Encrypted Injector.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="design_ui.hpp">
+      <Filter>Archivos de encabezado\util</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_create_thread_ex.hpp">
+      <Filter>Archivos de encabezado\ntcreatethreadex</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.hpp">
+      <Filter>Archivos de encabezado\settings</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
