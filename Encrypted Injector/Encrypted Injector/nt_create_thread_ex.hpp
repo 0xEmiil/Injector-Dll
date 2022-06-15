@@ -260,23 +260,47 @@ namespace Encrypted
 		{
 			
 			do {
-				Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Escribe el Proceso > "; std::cin >> proceso;
-				Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Proceso: " << proceso << std::endl;
-				Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "1. Injectar" << std::endl;
-				Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "2. Atras" << std::endl;
-				Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Seleciona una opcion > "; std::cin >> iIndexThread;
-				switch (iIndexThread)
+							
+				if (!last_proc.empty())
 				{
-				case 1: inject(); break;
-				case 2: Encrypted::current_coords.y = 0; system("cls"); break;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "1. Injectar Ultimo Proceso -> " << last_proc << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "2. Injectar Nuevo Proceso" << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "3. Atras" << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Seleciona una opcion o escribe el proceso > "; std::cin >> iIndexProc;
+					switch (iIndexProc)
+					{
+					case 1:  Encrypted::current_coords.y = 0; flag_last_proc = 1; proceso = last_proc; inject();  system("cls");   break;
+					case 2:  Encrypted::current_coords.y = 0; system("cls"); Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Escribe el Proceso > "; std::cin >> proceso; last_proc = proceso; break;
+					case 3:  Encrypted::current_coords.y = 0; system("cls"); iIndexProc = 3; /* pq no se saleee, ya se sale pero al parecer tengo que hacerlo de este modo pa que jale*/  break;
+					}
+				
 				}
-			} while (iIndexThread != 2);
+				else {
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Escribe el Proceso > "; std::cin >> proceso;
+				}
+				last_proc = proceso;
+				                                              /* Submenus diferentes ->>>> */
+				if (flag_last_proc != 1)
+				{
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Proceso: " << proceso << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "1. Injectar" << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "2. Atras" << std::endl;
+					Encrypted::d->set_coord_text(15, Encrypted::current_coords.y); std::cout << "Seleciona una opcion > "; std::cin >> iIndexThread;
+					switch (iIndexThread)
+					{
+					case 1: Encrypted::current_coords.y = 0; inject(); system("cls");  break;
+					case 2: Encrypted::current_coords.y = 0; system("cls"); break;
+					}
+				}
+			} while (iIndexThread != 2 || iIndexProc != 3);
 		}
 		private: 
-			int iIndexThread;
+			int iIndexThread, iIndexProc;
 			std::string proceso = "";
+			bool first_inject = false;
+			std::string last_proc = ""; int flag_last_proc = 0;
 			//std::string dll_path = "";
-			LPCSTR dll_path = "D:\\Emiliano Rios\\Documents\\ProyectosCode\\!Encrypted Menu\\bin\\Debug\\BigBaseV2.dll"; // se predefine la ruta
+			LPCSTR dll_path = "D:\\Emiliano Rios\\Documents\\ProyectosCode\\YimMenu\\bin\\Release\\BigBaseV2.dll"; // se predefine la ruta
 			HANDLE hToken;
 	};
 	CreateThread g_thread;
